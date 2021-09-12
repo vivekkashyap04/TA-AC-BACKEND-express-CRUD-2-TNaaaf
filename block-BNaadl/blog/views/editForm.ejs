@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/users/new"><button type="submit">Add User</button></a>
+    </header>
+    <main>
+      <h2>Add User</h2>
+      <form action="/users/<%= user._id%>" method="POST">
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          value="<%= user.title %>"
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="description"
+          value="<%= user.description %>"
+        />
+        <input
+          type="text"
+          name="tags"
+          placeholder="tags"
+          value="<%= user.tags %>"
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="author"
+          value="<%= user.author %>"
+        />
+        <button type="submit">Update user</button>
+      </form>
+    </main>
+  </body>
+</html>
