@@ -7,7 +7,7 @@ const bookSchema = new Schema({
   pages: Number,
   publication: String,
   cover_image: String,
-  category: String,
+  category: [String],
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
