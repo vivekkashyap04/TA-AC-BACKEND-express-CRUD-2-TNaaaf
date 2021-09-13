@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>User Details</h2>
+    <h3><%= user.title %></h3>
+    <h3><%= user.description %></h3>
+    <h3><%= user.tags %></h3>
+    <h3><%= user.author %></h3>
+    <div>
+      <a href="/users/<%= user._id%>/edit"
+        ><button type="submit">Edit</button></a
+      >
+      <a href="/users/<%= user._id%>/delete"
+        ><button type="submit">Delete</button></a
+      >
+      <a href="/users/<%= user._id%>/likes"
+        ><button type="submit">Likes:<%= user.likes %></button></a
+      >
+    </div>
+
+    <div>
+      <form action="/users/<%= user._id%>/comment" method="POST">
+        <textarea placeholder="add comment" name="content"> </textarea>
+        <button type="submit">Add comment</button>
+      </form>
+    </div>
+    <div>
+      <% comments.forEach(comment => { %>
+      <p><%= comment.content %></p>
+      <div>
+        <a href="/comment/<%= comment.id %>/edit"
+          ><button type="submit">edit</button></a
+        >
+      </div>
+      <div>
+        <a href="/comment/<%= comment.id %>/delete"
+          ><button type="submit">delete</button></a
+        >
+      </div>
+      <div>
+        <a href="/comment/<%= comment.id %>/like"
+          ><button type="submit">like:<%= comment.likes %></button></a
+        >
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

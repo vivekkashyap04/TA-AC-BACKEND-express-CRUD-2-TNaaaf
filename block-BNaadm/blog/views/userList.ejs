@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/users/new"><button type="submit">Add User</button></a>
+    </header>
+    <main>
+      <h2>List of User</h2>
+      <ul>
+        <% user.forEach(usr => { %>
+        <li><a href="/users/<%=usr._id %>"><%= usr.title %></a></li>
+        <%})%>
+      </ul>
+    </main>
+  </body>
+</html>
